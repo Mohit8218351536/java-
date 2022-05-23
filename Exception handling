@@ -1,0 +1,64 @@
+package asd;
+
+import java.util.Scanner;
+class  exe
+{
+	int a,b;
+	int x[];
+	exe()
+	{
+		a=b=0;
+		x=new int[10];
+	
+	}
+	exe(int a,int b)
+	{
+		this.a=a;
+		this.b=b;
+		x=new int[10];
+		for(int i=1;i<x.length;i++)
+			x[i-1]=i;
+		
+	}
+	void func()
+	{
+		int i=0;
+		for(i=0;i<10;i++,b--)
+			System.out.println(x[i]/b);
+		
+	}
+}
+
+
+
+public class mohit {
+
+	public static void main(String[] args) {
+		exe e1=new exe(20,30);
+		Scanner sc=new Scanner(System.in);
+		try 
+		{
+			e1.func();
+			System.out.println("object2 created ");
+			exe  e2=new exe(20,3);
+					e2.func();
+		}
+		catch(ArrayIndexOutOfBoundsException e)
+		{
+			System.out.println("exceotion catch in inner catch block");
+			System.out.println("array index out of bonds ");
+			
+		System.out.println(e.getMessage());
+		}
+		catch(Exception e)
+		{
+			System.out.println("excetion caught in inner catch block");
+			System.out.println(e.getMessage());
+			
+		}
+		
+	
+
+	}
+
+}
