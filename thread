@@ -1,0 +1,15 @@
+package unitfive;
+
+public class tyu extends Thread {
+	public void run() {
+		System.out.println("thread is running ");
+	}
+	
+
+	public static void main(String[] args) {
+	tyu t1=new tyu();
+	t1.start();
+	System.out.println("End of program");
+	}
+	}
+
