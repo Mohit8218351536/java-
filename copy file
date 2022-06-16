@@ -1,0 +1,61 @@
+ 
+packagejavaTpoint.javacodes;  
+import java.io.*;  
+importjava.util.*;  
+
+publicclassFileExample {  
+   
+    publicstaticvoidcopyData(File file1, File file2) throws Exception  
+    {  
+       
+        FileInputStreaminputStream = newFileInputStream(file1);  
+        FileOutputStreamoutputStream = newFileOutputStream(file2);  
+       
+        try {  
+           
+            inti;  
+           
+            while ((i = inputStream.read()) != -1) {  
+                  
+               
+                outputStream.write(i);  
+            }  
+        }  
+      
+        catch(Exception e) {  
+            System.out.println("Error Found: "+e.getMessage());  
+        }  
+        
+        finally {  
+            if (inputStream != null) {  
+    
+                inputStream.close();  
+            }  
+           
+            if (outputStream != null) {  
+                outputStream.close();  
+            }  
+        }  
+        System.out.println("File Copied");  
+    }  
+   
+    publicstaticvoid main(String[] args) throws Exception  
+    {  
+      
+        Scanner sc = newScanner(System.in);  
+          
+        System.out.println("Enter the name of the file from where the data would be copied :");  
+        String file1 = sc.nextLine();  
+      
+        File a = newFile("C:\\Users\\pc\\OneDrive\\Desktop\\"+file1);  
+  
+       
+        System.out.println("Enter the name of the file from where the data would be written :");  
+        String file2 = sc.nextLine();  
+      
+        File b = newFile("C:\\Users\\pc\\OneDrive\\Desktop\\"+file2);  
+        sc.close();  
+     
+        copyData(a, b);  
+    }  
+}  
